@@ -354,6 +354,11 @@ const DRAG_OPTIONS = {
 	dragClass: 'task-dragging',
 	delayOnTouchOnly: true,
 	delay: 1000,
+	// Chromium does not reliably auto-scroll overflowing containers during native
+	// drag and drop, so let sortable scroll the board when nearing its edges.
+	forceAutoScrollFallback: true,
+	scrollSensitivity: 100,
+	scrollSpeed: 20,
 } as const
 
 const MIN_SCROLL_HEIGHT_PERCENT = 0.25
